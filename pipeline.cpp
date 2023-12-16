@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-#define INUM 5 /*需要流水处理的浮点加指令数目*/
+#define INUM 6 /*需要流水处理的浮点加指令数目*/
 #define SPACE 4     /*功能部件数目*/
 #define TIME  INUM+(SPACE-1)   /*存储不同时间段各个功能部件内指令值*/
 
@@ -18,7 +18,7 @@ void update(int i){
     //已经将原属组复制给新数组
     for(int j=0;j<SPACE;j++){
         int flag = 0;
-        for(int k=j;k<j+5;k++){
+        for(int k=j;k<j+INUM;k++){
             if(ts[j][k] != 0){
 
                 if(j+1<=i){
@@ -101,7 +101,7 @@ int main(){
     
     
 
-    if(__time == 8){
+    if(__time == TIME){
         std::cout << "\nThe task has been finished!\n" << std::endl;
         std::cout << "The Throughput of the pipeline is " << static_cast<double>(INUM) / static_cast<double>(TIME) << " Δ"<<"t" << std::endl;
         std::cout << "The Speedup of the pipeline is " << static_cast<double>(INUM * SPACE) / static_cast<double>(TIME) << std::endl;
