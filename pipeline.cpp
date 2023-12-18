@@ -2,7 +2,7 @@
 #include <iomanip>
 using namespace std;
 
-#define INUM 6 /*需要流水处理的浮点加指令数目*/
+#define INUM 5 /*需要流水处理的浮点加指令数目*/
 #define SPACE 4     /*功能部件数目*/
 #define TIME  INUM+(SPACE-1)   /*存储不同时间段各个功能部件内指令值*/
 
